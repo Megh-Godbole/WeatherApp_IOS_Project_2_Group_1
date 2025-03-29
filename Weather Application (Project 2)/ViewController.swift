@@ -14,6 +14,17 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func locationPressed(_ sender: UIButton) {
+    }
+    @IBAction func searchPressed(_ sender: UIButton) {
+    }
+    @IBOutlet weak var cityLabel: UILabel!
+    
+    @IBAction func searchTextField(_ sender: UITextField) {
+    }
+    @IBAction func toggleSwitch(_ sender: Any) {
+    }
+    @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var weatherImageView: UIImageView!
 }
 
