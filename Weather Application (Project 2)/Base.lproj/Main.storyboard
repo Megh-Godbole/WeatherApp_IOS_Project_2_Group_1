@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6Mw-0G-R9o">
-                                <rect key="frame" x="20" y="119" width="353" height="44"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6Mw-0G-R9o">
+                                <rect key="frame" x="72" y="115" width="248.33333333333337" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXE-Qq-tNZ">
                                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -31,7 +31,8 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for a city" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RF7-zg-eYy">
-                                        <rect key="frame" x="52" y="0.0" width="238" height="44"/>
+                                        <rect key="frame" x="52" y="0.0" width="133.33333333333334" height="44"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="searchTextField"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -39,7 +40,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxh-Up-ZaA">
-                                        <rect key="frame" x="298" y="0.0" width="55" height="44"/>
+                                        <rect key="frame" x="193.33333333333334" y="0.0" width="55" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="55" id="12T-wP-4Iw"/>
                                         </constraints>
@@ -56,17 +57,18 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="ztO-4W-Bh3"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="IXb-wN-BgV">
-                                <rect key="frame" x="16" y="202.99999999999997" width="361" height="283.33333333333326"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="IXb-wN-BgV">
+                                <rect key="frame" x="68" y="204" width="256.33333333333331" height="283.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LcT-F3-vmF">
-                                        <rect key="frame" x="153.66666666666666" y="0.0" width="54" height="12.333333333333334"/>
+                                        <rect key="frame" x="101.33333333333331" y="0.0" width="54" height="12.333333333333334"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="cityLabel"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.max.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3cc-cL-Fzb">
-                                        <rect key="frame" x="130.66666666666666" y="36.333333333333343" width="100" height="100"/>
+                                        <rect key="frame" x="78.333333333333314" y="36.333333333333343" width="100" height="100"/>
                                         <color key="tintColor" systemColor="systemYellowColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="f3U-bL-6aU"/>
@@ -74,19 +76,20 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWj-zz-vDn">
-                                        <rect key="frame" x="132" y="160.33333333333331" width="97" height="20.333333333333343"/>
+                                        <rect key="frame" x="79.666666666666686" y="160.33333333333331" width="97" height="20.333333333333343"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="tempLabel"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Condition" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YX2-5M-j0S">
-                                        <rect key="frame" x="144" y="204.66666666666669" width="73.333333333333314" height="20.333333333333343"/>
+                                        <rect key="frame" x="91.666666666666686" y="204.66666666666669" width="73.333333333333314" height="20.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUf-Bx-X0G">
-                                        <rect key="frame" x="120.33333333333334" y="249.00000000000003" width="120.66666666666666" height="34.333333333333343"/>
+                                        <rect key="frame" x="68" y="249.00000000000003" width="120.66666666666669" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Toggle °C/°F"/>
                                         <connections>
@@ -95,8 +98,8 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUQ-IX-B9k">
-                                <rect key="frame" x="60" y="738" width="273" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUQ-IX-B9k">
+                                <rect key="frame" x="112" y="745" width="168.33333333333337" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="UKP-sJ-6Xd"/>
                                     <constraint firstAttribute="width" constant="120" id="fRY-hG-59A"/>
@@ -125,6 +128,7 @@
                     </view>
                     <connections>
                         <outlet property="cityLabel" destination="LcT-F3-vmF" id="z75-pW-HhE"/>
+                        <outlet property="searchTextField" destination="RF7-zg-eYy" id="Xx2-Db-P27"/>
                         <outlet property="tempLabel" destination="ZWj-zz-vDn" id="pYS-g5-1vJ"/>
                         <outlet property="weatherImageView" destination="3cc-cL-Fzb" id="Bjz-gE-DvF"/>
                     </connections>
@@ -158,16 +162,18 @@
                                                 <constraint firstAttribute="height" constant="40" id="ZcD-CN-AhW"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City Name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EH8-ZC-6vn">
-                                            <rect key="frame" x="168" y="9" width="84" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN4-By-FTF">
+                                            <rect key="frame" x="204" y="11" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="cityLabel"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ldn-fp-3Vx">
-                                            <rect key="frame" x="276" y="10" width="97" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxZ-Us-M7Y">
+                                            <rect key="frame" x="307" y="11" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="tempLabel"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
