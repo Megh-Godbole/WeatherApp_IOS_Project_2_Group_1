@@ -44,9 +44,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Request location permission
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
                
         // UI Customization
         weatherImageView.tintColor = .gray // Default color
@@ -63,6 +60,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     @IBAction func locationPressed(_ sender: UIButton) {
+        // Request location permission
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
     }
     
@@ -72,6 +72,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             return
         }
         fetchWeather(for: city)
+        searchTextField.text = ""
     }
 
     func fetchWeather(for city: String) {
