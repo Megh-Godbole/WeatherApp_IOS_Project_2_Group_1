@@ -2,13 +2,13 @@
 //  ViewController.swift
 //  Weather Application (Project 2)
 //
-//  Created by Megh Godbole on 2025-03-29.
+//
 //
 
 import UIKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate{
 
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var weatherImageView: UIImageView!
@@ -17,9 +17,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var toggleSwitch: UISwitch!
     @IBOutlet weak var conditionLabel: UILabel!
     
+    
     let weatherManager = WeatherManager()
     let locationManager = CLLocationManager()
     var currentWeather: WeatherData?;
+    var citiesWeather: [WeatherData] = []
+
     
     let weatherConditions: [Int: (symbol: String, color: UIColor)] = [
         1000: ("sun.max.fill", .systemYellow),
@@ -49,6 +52,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         weatherImageView.tintColor = .gray // Default color
         tempLabel.font = UIFont.boldSystemFont(ofSize: 24)
         cityLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        
+        
     }
 
     @IBAction func toggleUnit(_ sender: UISwitch) {
@@ -74,6 +79,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             guard let self = self, let weather = weather else { return }
             self.currentWeather = weather
             self.updateUI(with: weather)
+            self.citiesWeather.append(weather)
         }
     }
     
@@ -85,7 +91,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             self.tempLabel.text = "\(temp)° \(unit)"
             self.conditionLabel.text = weather.current.condition.text
         
-            // Get weather symbol and set color
+            
             let weatherSymbol = self.getWeatherSymbol(for: weather.current.condition.code)
             self.weatherImageView.image = UIImage(systemName: weatherSymbol)
             self.weatherImageView.tintColor = self.getWeatherColor(for: weather.current.condition.code)
@@ -111,4 +117,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         print("Failed to get location: \(error)")
     }
     
-}
+    @IBAction func citiesPressed(_ sender: UIButton) {
+        if citiesWeather.isEmpty {
+            print("No cities added yet")
+            return
+        }
+        performSegue(withIdentifier: "ShowWeatherDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowWeatherDetail" {
+            if let destinationVC = segue.destination as? CitiesViewController {
+                destinationVC.citiesWeather = citiesWeather
+                destinationVC.isFahrenheit = toggleSwitch.isOn 
+            }
+        }
+    }
+
+        
+    }
+
+
+
+
