@@ -26,11 +26,17 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" image="location.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="locationPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="izf-zf-sgA"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for a city" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RF7-zg-eYy">
                                         <rect key="frame" x="52" y="0.0" width="238" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="searchTextField:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Hnr-BA-3Hd"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxh-Up-ZaA">
                                         <rect key="frame" x="298" y="0.0" width="55" height="44"/>
@@ -40,6 +46,9 @@
                                         <color key="tintColor" red="0.85098039219999999" green="0.79083806820000002" blue="0.86380026219999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" image="magnifyingglass" catalog="system"/>
+                                        <connections>
+                                            <action selector="searchPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vof-HU-OcJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -80,6 +89,9 @@
                                         <rect key="frame" x="120.33333333333334" y="249.00000000000003" width="120.66666666666666" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Toggle °C/°F"/>
+                                        <connections>
+                                            <action selector="toggleSwitch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p8C-rC-C9p"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -111,6 +123,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eUQ-IX-B9k" secondAttribute="bottom" constant="40" id="xbG-OZ-UZb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="LcT-F3-vmF" id="z75-pW-HhE"/>
+                        <outlet property="tempLabel" destination="ZWj-zz-vDn" id="pYS-g5-1vJ"/>
+                        <outlet property="weatherImageView" destination="3cc-cL-Fzb" id="Bjz-gE-DvF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
